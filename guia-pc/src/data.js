@@ -1,24 +1,59 @@
-// Todo el contenido de la app vive acá. Editá los textos sin tocar los componentes.
+
+// Este archivo contiene toda la información de la aplicación.
+// Podemos modificar los textos y agregar contenido sin necesidad
+// de modificar los componentes que muestran esa información.
+
+// Exportamos una constante con el nombre de la aplicación.
+// Otros archivos pueden importarla para mostrarlo en pantalla.
 export const APP_NAME = 'Armá tu PC';
 
+// Creamos un arreglo llamado NIVELES.
+// Contiene los diferentes niveles de aprendizaje de la aplicación.
+// Cada nivel tiene un identificador, un nombre, un color,
+// una descripción y sus respectivos módulos.
 export const NIVELES = [
+
+  // PRIMER NIVEL: PRINCIPIANTE.
   {
+    // Identificador único del nivel.
+    // Se utiliza para reconocerlo y acceder a él.
     id: 'principiante',
+
+    // Nombre que se muestra en pantalla.
     nombre: 'Principiante',
+
+    // Color que identifica visualmente al nivel.
     color: '#1F9D8B',
+
+    // Breve descripción de los contenidos del nivel.
     descripcion: 'Qué es cada pieza, para qué sirve y cómo se relacionan entre sí.',
+
+    // Arreglo que contiene los módulos correspondientes al nivel.
     modulos: [
+
+      // MÓDULO: PROCESADOR.
       {
+        // Identificador del módulo.
         id: 'cpu',
+
+        // Nombre que aparece en la aplicación.
         nombre: 'Procesador (CPU)',
+
+        // Resumen que explica qué es y para qué sirve.
         resumen: 'Es el cerebro de la PC: ejecuta las instrucciones de todos los programas.',
+
+        // Arreglo con los puntos importantes del tema.
         puntos: [
           'Se mide por cantidad de núcleos y velocidad (GHz).',
           'Los dos fabricantes principales son Intel y AMD.',
           'Cada procesador usa un socket específico: tiene que coincidir con el de la placa madre.'
         ],
+
+        // Consejo adicional para el usuario.
         consejo: 'Antes de comprar, verificá en la web del fabricante de la placa que soporte ese modelo de procesador.'
       },
+
+      // MÓDULO: PLACA MADRE.
       {
         id: 'mother',
         nombre: 'Placa madre',
@@ -28,7 +63,10 @@ export const NIVELES = [
           'Viene en distintos tamaños: ATX, Micro-ATX y Mini-ITX.',
           'El gabinete tiene que admitir el tamaño de tu placa.'
         ]
+        // Este módulo no tiene consejo adicional.
       },
+
+      // MÓDULO: MEMORIA RAM.
       {
         id: 'ram',
         nombre: 'Memoria RAM',
@@ -39,6 +77,8 @@ export const NIVELES = [
           'Hay generaciones (DDR4, DDR5) que no son intercambiables.'
         ]
       },
+
+      // MÓDULO: ALMACENAMIENTO.
       {
         id: 'storage',
         nombre: 'Almacenamiento',
@@ -49,6 +89,8 @@ export const NIVELES = [
           'Los SSD M.2 se enchufan directo en la placa, sin cables.'
         ]
       },
+
+      // MÓDULO: FUENTE DE ALIMENTACIÓN.
       {
         id: 'psu',
         nombre: 'Fuente de alimentación',
@@ -59,6 +101,8 @@ export const NIVELES = [
           'Es la última pieza donde conviene ahorrar.'
         ]
       },
+
+      // MÓDULO: GABINETE Y PLACA DE VIDEO.
       {
         id: 'gabinete',
         nombre: 'Gabinete y placa de video',
@@ -71,12 +115,16 @@ export const NIVELES = [
       }
     ]
   },
+
+  // SEGUNDO NIVEL: INTERMEDIO.
   {
     id: 'intermedio',
     nombre: 'Intermedio',
     color: '#2F6FBE',
     descripcion: 'Compatibilidad entre piezas, cálculo de potencia y cómo elegir con criterio.',
     modulos: [
+
+      // MÓDULO: SOCKET Y CHIPSET.
       {
         id: 'socket',
         nombre: 'Socket y chipset',
@@ -88,6 +136,8 @@ export const NIVELES = [
         ],
         consejo: 'Buscá la lista de CPU compatibles (QVL) en la página de soporte de tu placa.'
       },
+
+      // MÓDULO: TIPOS DE MEMORIA RAM.
       {
         id: 'ram-ddr',
         nombre: 'RAM: DDR4, DDR5 y dual channel',
@@ -98,6 +148,8 @@ export const NIVELES = [
           'Comprá un kit de módulos iguales para evitar problemas de compatibilidad.'
         ]
       },
+
+      // MÓDULO: ALMACENAMIENTO SSD.
       {
         id: 'nvme',
         nombre: 'SSD NVMe vs SATA',
@@ -108,6 +160,8 @@ export const NIVELES = [
           'Algunas ranuras M.2 aceptan solo NVMe y otras también SATA: revisá el manual.'
         ]
       },
+
+      // MÓDULO: CÁLCULO DE POTENCIA.
       {
         id: 'potencia',
         nombre: 'Cómo calcular la fuente',
@@ -119,6 +173,8 @@ export const NIVELES = [
         ],
         consejo: 'Usá una calculadora de potencia online como referencia y contrastala con lo que recomienda el fabricante de la GPU.'
       },
+
+      // MÓDULO: REFRIGERACIÓN.
       {
         id: 'refri',
         nombre: 'Refrigeración',
@@ -129,6 +185,8 @@ export const NIVELES = [
           'El cooler debe soportar el TDP del procesador y ser compatible con su socket.'
         ]
       },
+
+      // MÓDULO: CUELLO DE BOTELLA.
       {
         id: 'cuello',
         nombre: 'Cuello de botella',
@@ -141,12 +199,16 @@ export const NIVELES = [
       }
     ]
   },
+
+  // TERCER NIVEL: AVANZADO.
   {
     id: 'avanzado',
     nombre: 'Avanzado',
     color: '#6D4CC2',
     descripcion: 'Ajustes finos, BIOS, rendimiento y circulación de aire.',
     modulos: [
+
+      // MÓDULO: BIOS Y UEFI.
       {
         id: 'bios',
         nombre: 'BIOS/UEFI y actualización',
@@ -158,6 +220,8 @@ export const NIVELES = [
         ],
         consejo: 'Actualizá la BIOS solo si lo necesitás y con la PC conectada a un estabilizador o UPS.'
       },
+
+      // MÓDULO: PERFILES DE MEMORIA RAM.
       {
         id: 'xmp',
         nombre: 'Perfiles XMP y EXPO',
@@ -168,6 +232,8 @@ export const NIVELES = [
           'Si la PC se vuelve inestable, probá bajar la frecuencia o subir levemente el voltaje.'
         ]
       },
+
+      // MÓDULO: VRM.
       {
         id: 'vrm',
         nombre: 'VRM y fases de energía',
@@ -178,6 +244,8 @@ export const NIVELES = [
           'Para procesadores de gama alta, elegí placas con buen VRM.'
         ]
       },
+
+      // MÓDULO: PCI EXPRESS.
       {
         id: 'pcie',
         nombre: 'Líneas PCIe y ancho de banda',
@@ -188,6 +256,8 @@ export const NIVELES = [
           'Resizable BAR permite al procesador acceder a toda la memoria de la GPU y puede mejorar algunos juegos.'
         ]
       },
+
+      // MÓDULO: FLUJO DE AIRE.
       {
         id: 'airflow',
         nombre: 'Flujo de aire',
@@ -200,12 +270,16 @@ export const NIVELES = [
       }
     ]
   },
+
+  // CUARTO NIVEL: EXPERTO.
   {
     id: 'experto',
     nombre: 'Experto',
     color: '#B83A3A',
     descripcion: 'Optimización por tipo de uso, estabilidad y diagnóstico de fallas.',
     modulos: [
+
+      // MÓDULO: OVERCLOCK Y UNDERVOLT.
       {
         id: 'oc',
         nombre: 'Overclock y undervolt',
@@ -216,6 +290,8 @@ export const NIVELES = [
           'El overclock puede anular la garantía y acortar la vida útil si se abusa del voltaje.'
         ]
       },
+
+      // MÓDULO: TEMPERATURAS.
       {
         id: 'termica',
         nombre: 'Análisis térmico',
@@ -226,6 +302,8 @@ export const NIVELES = [
           'Revisá el montaje del cooler y renová la pasta térmica cada tanto.'
         ]
       },
+
+      // MÓDULO: ARMADO SEGÚN EL USO.
       {
         id: 'cargas',
         nombre: 'Armado según tipo de uso',
@@ -237,6 +315,8 @@ export const NIVELES = [
           'IA y cómputo: memoria de video (VRAM) grande y buena refrigeración sostenida.'
         ]
       },
+
+      // MÓDULO: DIAGNÓSTICO DE FALLAS.
       {
         id: 'diag',
         nombre: 'Diagnóstico de fallas',
@@ -248,105 +328,6 @@ export const NIVELES = [
           'Probá con otra fuente o con un testeador antes de descartar la placa.'
         ]
       }
-    ]
-  }
-];
-
-export const HERRAMIENTAS = [
-  'Destornillador Phillips (de cruz) magnético, de punta mediana.',
-  'Una mesa amplia, limpia y bien iluminada.',
-  'Manual de la placa madre (en papel o en PDF): ahí está el diagrama de conectores.',
-  'Precintos o cintas velcro para ordenar cables.',
-  'Pasta térmica, si tu cooler no la trae aplicada.'
-];
-
-export const CABLES = [
-  { cable: 'ATX de 24 pines', destino: 'Placa madre', donde: 'Borde derecho de la placa, es el conector más grande.' },
-  { cable: 'CPU / EPS de 8 pines (4+4)', destino: 'Placa madre, para el procesador', donde: 'Esquina superior izquierda, cerca del socket. Dice "CPU" o "EPS".' },
-  { cable: 'PCIe de 6+2 pines', destino: 'Placa de video', donde: 'Al costado o arriba de la placa de video.' },
-  { cable: '12V-2x6 / 12VHPWR', destino: 'Placas de video de gama alta (si lo usan)', donde: 'Al costado de la placa de video. Debe entrar hasta el fondo.' },
-  { cable: 'SATA de energía', destino: 'Discos SATA y unidades ópticas', donde: 'Parte trasera de cada unidad.' },
-  { cable: 'SATA de datos', destino: 'Placa madre', donde: 'Puertos SATA, abajo a la derecha de la placa.' },
-  { cable: 'CPU_FAN', destino: 'Ventilador del cooler del procesador', donde: 'Junto al socket. Es de 4 pines y está rotulado.' }
-];
-
-export const PASOS = [
-  {
-    titulo: 'Preparar el espacio',
-    texto: 'Abrí las cajas y sacá la placa madre. Apoyala sobre la caja de la placa, no sobre una superficie metálica ni sobre alfombra.',
-    avisos: [
-      { tipo: 'atencion', texto: 'Evitá armar sobre alfombras o con ropa de lana: generan estática que puede dañar las piezas.' }
-    ]
-  },
-  {
-    titulo: 'Colocar el procesador',
-    texto: 'Levantá la palanca del socket y alineá el triángulo marcado en una esquina del procesador con el triángulo del socket. Apoyalo con suavidad y bajá la palanca.',
-    avisos: [
-      { tipo: 'peligro', texto: 'No toques los contactos del procesador ni los pines del socket. Un pin doblado puede dejar la placa inservible.' },
-      { tipo: 'atencion', texto: 'Nunca fuerces el procesador. Si no apoya solo, está mal orientado.' }
-    ]
-  },
-  {
-    titulo: 'Instalar la memoria RAM',
-    texto: 'Abrí las trabas de los slots, alineá la muesca del módulo con la del slot y presioná parejo hasta que las trabas hagan clic.',
-    avisos: [
-      { tipo: 'consejo', texto: 'Con dos módulos, usá los slots que indica el manual (generalmente el 2.º y el 4.º desde el procesador) para activar el dual channel.' }
-    ]
-  },
-  {
-    titulo: 'Instalar el SSD M.2',
-    texto: 'Sacá el disipador de la ranura M.2 si lo tiene, insertá el SSD en ángulo, bajalo y fijalo con el tornillo en la posición de su largo.',
-    avisos: [
-      { tipo: 'atencion', texto: 'Algunas placas traen una lámina plástica sobre el espaciador o la pieza térmica: retirala antes de colocar el SSD.' }
-    ]
-  },
-  {
-    titulo: 'Montar el cooler',
-    texto: 'Aplicá pasta térmica del tamaño de una arveja en el centro del procesador (si el cooler no la trae) y fijá el cooler siguiendo su manual. Conectá su cable al conector CPU_FAN.',
-    avisos: [
-      { tipo: 'peligro', texto: 'Sacá el film plástico de la base del cooler antes de instalarlo. Si queda puesto, el procesador se recalienta enseguida.' }
-    ]
-  },
-  {
-    titulo: 'Preparar el gabinete y la fuente',
-    texto: 'Abrí los paneles laterales. Verificá que los separadores (standoffs) del gabinete coincidan con los agujeros de tu placa. Instalá la fuente con su ventilador apuntando hacia donde haya entrada de aire.',
-    avisos: [
-      { tipo: 'atencion', texto: 'No dejes separadores de más debajo de la placa: pueden hacer cortocircuito.' }
-    ]
-  },
-  {
-    titulo: 'Fijar la placa madre',
-    texto: 'Colocá primero la chapa trasera de puertos (I/O shield) si no viene integrada. Después apoyá la placa sobre los separadores y atornillala sin apretar de más.',
-    avisos: []
-  },
-  {
-    titulo: 'Conectar los cables de la fuente',
-    texto: 'Conectá el cable de 24 pines a la placa y el de CPU (EPS) en la esquina superior izquierda. Después conectá la energía de los discos SATA, si los hay.',
-    avisos: [
-      { tipo: 'peligro', texto: 'Los conectores tienen una forma que solo permite una posición. Si no entra, está al revés: nunca lo fuerces.' },
-      { tipo: 'atencion', texto: 'No uses cables de fuente de otra marca o modelo: aunque encajen, la distribución de los cables puede ser distinta y quemar piezas.' }
-    ]
-  },
-  {
-    titulo: 'Instalar la placa de video',
-    texto: 'Sacá las tapas del gabinete que correspondan, insertá la placa de video en el slot PCIe x16 de arriba hasta oír el clic y atornillala al gabinete. Conectale los cables PCIe de la fuente.',
-    avisos: [
-      { tipo: 'atencion', texto: 'En placas de video potentes, usá un cable independiente para cada conector. Evitá los cables que se bifurcan para alimentar dos conectores.' },
-      { tipo: 'consejo', texto: 'Si tu conector de energía es de tipo 12V-2x6, empujalo hasta el fondo y evitá doblar el cable pegado al conector.' }
-    ]
-  },
-  {
-    titulo: 'Conectar los cables del frente del gabinete',
-    texto: 'Conectá el botón de encendido, los LED, los USB y el audio frontal a los pines de la placa. El manual tiene el diagrama exacto de cada uno.',
-    avisos: [
-      { tipo: 'consejo', texto: 'Primero conectá el botón de encendido (POWER SW): es el imprescindible para probar.' }
-    ]
-  },
-  {
-    titulo: 'Primer encendido',
-    texto: 'Conectá el monitor a la placa de video (no a la placa madre, si tenés GPU dedicada), enchufá la fuente y encendé. Entrá a la BIOS y verificá que reconozca el procesador, la RAM y el SSD. Después instalá el sistema operativo.',
-    avisos: [
-      { tipo: 'atencion', texto: 'Si no da imagen, apagá y revisá: RAM bien insertada, cable EPS de CPU conectado y monitor enchufado a la placa de video.' }
     ]
   }
 ];
